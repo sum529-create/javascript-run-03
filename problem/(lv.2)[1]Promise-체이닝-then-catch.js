@@ -11,12 +11,8 @@
 async function getDataWithFallback(primary, fallback) {
   return new Promise((resolve, reject) => {
     primary()
-      .then((e) => {
-        resolve(e);
-      })
-      .catch((e) => {
-        resolve(fallback(e));
-      });
+      .then((e) => resolve(e))
+      .catch((err) => resolve(fallback(err)));
   });
 }
 

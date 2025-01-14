@@ -14,8 +14,9 @@ async function loginRequest(id, pw) {
   return new Promise((resolve, reject) => {
     if (id === "admin" && pw === "1234") {
       resolve("ok");
+    } else {
+      resolve("fail");
     }
-    resolve("fail");
   });
 }
 
